@@ -1,3 +1,5 @@
+// Game code
+
 let options = ["rock", "paper", "scissors"];
 let ai = "";
 let player = "";
@@ -21,16 +23,22 @@ let getComputerChoice = () => {
 };
 
 let singleRound = (player, ai) => {
-    let roundRes;
+    let roundRes = {
+        winner: null,
+        looser: null,
+        other: null
+    }
     games += 1;
 
     if (player == ai){
-        roundRes = "Draw: " + player;
+        roundRes.other = "draw";
     } else if ((player == "rock" && ai == "paper") || (player == "paper" && ai == "scissors") || (player == "scissors" && ai == "rock")) {
-        roundRes = "You Lose! " + ai + " beats " + player;
+        roundRes.winner = ai;
+        roundRes.looser = player;
         aiWins += 1;
     } else {
-        roundRes = "You Win! " + player + " beats " + ai;
+        roundRes.winner = player;
+        roundRes.looser = ai;
         playerWins += 1;
     }
 
@@ -52,4 +60,34 @@ let game = () => {
     }
 }
 
-game();
+//game();
+
+// style and actions code
+
+let playButton = document.querySelector("#playButton");
+let optionDiv = document.querySelectorAll(".playerOptions");
+let playerChoice = null;
+
+let playerChoiceImg = document.querySelector("#playerChoice > img");
+let aiChoiceImg = document.querySelector("#aiChoice > img");
+let titleResult = document.querySelector("#roundWinner");
+
+optionDiv.forEach((option) => {
+    option.addEventListener("click", () => {
+        playerChoice = option["id"];
+    });
+});
+
+playButton.addEventListener("click", () => {
+    let aiChoice = getComputerChoice();
+    playerChoiceImg.setAttribute("src", `./img/${playerChoice}.png`)
+    aiChoiceImg.setAttribute("src", `./img/${aiChoice}.png`)
+
+    let roundResult = singleRound(playerChoice, aiChoice);
+    
+    if(roundResult.other == null){
+        titleResult.textContent = roundResult.winner + " beat " + roundResult.looser;
+    } else {
+        titleResult.textContent = roundResult.other;
+    }
+});

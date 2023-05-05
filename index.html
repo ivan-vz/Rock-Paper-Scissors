@@ -4,10 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>R-P-S</title>
 </head>
 <body>
-    <h1>Open the terminal in the development tool to play Rock, Paper, Scissors.</h1>
+    <div class="container">
+        <h1>Choose One!</h1>
+
+        <div class="options">
+            <div id="rock" class="playerOptions">
+                <img src="./img/rock.png" alt="drawing of rock">
+            </div>
+            <div id="paper" class="playerOptions">
+                <img src="./img/paper.png" alt="drawing of paper">
+            </div>
+            <div id="scissors" class="playerOptions">
+                <img src="./img/scissors.png" alt="drawing od scissors">
+            </div>
+        </div>
+
+        <button id="playButton">Play</button>
+
+        <div class="moves">
+            <table>
+                <th>PLAYER</th>
+            </table>
+            <div class="options">
+                <div id="playerChoice">
+                    <img src="./img/question.png" alt="drawing of an interrogation symbol">
+                </div>
+                <div>VS</div>
+                <div id="aiChoice">
+                    <img src="./img/question.png" alt="drawing of an interrogation symbol">
+                </div>
+            </div>
+            <table>
+                <th>AI</th>
+            </table>
+        </div>
+
+        <h1 id="roundWinner"></h1>
+
+    </div>
 </body>
 
 <script src="script.js"></script>
