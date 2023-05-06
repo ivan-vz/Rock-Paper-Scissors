@@ -40,3 +40,20 @@ html, body{
 #playerChoice, #aiChoice{
     width: 350px;
 }
+
+table{
+    width: 200px;
+    text-align: center;
+}
+
+table i {
+    font-size: 50px;
+}
+
+.crossPoint{
+    color: red;
+}
+
+.checkPoint{
+    color: green;
+}
