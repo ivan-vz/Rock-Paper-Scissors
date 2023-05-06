@@ -1,7 +1,12 @@
-html, body{
+*{
     margin: 0;
     padding: 0;
+}
+
+html, body{
     height: 100%;
+    background-color: #ffffeb;
+    font-family: 'Kalam', cursive;
 }
 
 .container{
@@ -9,6 +14,12 @@ html, body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#header{
+    color: #5086c1;
+    font-size: 70px;
+    padding: 5px;
 }
 
 .options{
@@ -24,12 +35,13 @@ html, body{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 20px;
 }
 
 .playerOptions {
-    width: 300px;
+    width: 250px;
+    height: 270px;
     border: 2px solid black;
+    transition: all .07s ease;
 }
 
 .playerOptions img, #playerChoice img, #aiChoice img{
@@ -37,13 +49,52 @@ html, body{
     height: 100%;
 }
 
+#playButton{
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    background-color: #1f2124;
+    border-color: transparent;
+    border-radius: 16px;
+    color: white;
+    font-size: 20px;
+    margin: 10px;
+    padding: 10px;
+}
+
 #playerChoice, #aiChoice{
-    width: 350px;
+    width: 250px;
+    height: 300px;
+    border: 2px solid black;
+}
+
+#versusLogo{
+    width: 200px;
+    text-align: center;
+    font-size: 90px;
+    font-weight: 900;
+    color: #1f2124;
+    font-style: italic;
+    text-shadow: 16px 10px 10px #1f2124;
 }
 
 table{
     width: 200px;
+    height: 294px;
     text-align: center;
+}
+
+#aiTHead, #playerTHead {
+    padding: 15px;
+    border-radius: 20px;
+}
+
+#aiTHead{
+    background-color: #ff6961;
+}
+
+#playerTHead{
+    background-color: #77dd77;
 }
 
 table i {
@@ -56,4 +107,69 @@ table i {
 
 .checkPoint{
     color: green;
+}
+
+.round {
+    background-color: #c5d084;
+    text-align: center;
+    width: 300px;
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 16px;
+}
+
+/* animation and event */
+.playerOptions:hover{
+    cursor: pointer;
+    border-color: #3b8eed;
+    box-shadow: 0 0 1rem #3b8eed;
+}
+
+.bookmark{
+    border-color: #3b8eed;
+    box-shadow: 0 0 1rem #3b8eed;
+}
+
+/* End of the game */
+.congratulations{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.congratulations h1{
+    color: #b186f1;
+    font-size: 80px;
+}
+
+.congratulations #summary {
+    width: 600px;
+    height: 40px;
+    text-align: center;
+    color: black;
+    font-size: 30px;
+    background-color: white;
+    color: #1f2124;
+    border: 2px dashed black;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.congratulations button{
+    cursor: pointer;
+    background-color: #77dd77;
+    font-size: 30px;
+    border-color: transparent;
+    border-radius: 16px;
+    padding: 10px;
+}
+
+.congratulations button:hover{
+    background-color: white;
+}
+
+.hide{  
+    display: none;
 }

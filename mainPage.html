@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/mainPage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap" rel="stylesheet">
     <title>R-P-S</title>
 </head>
 <body>
     <div class="container">
-        <h1>Choose One!</h1>
+        <h1 id="header">Choose One!</h1>
 
         <div class="options">
             <div id="rock" class="playerOptions">
@@ -29,7 +30,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th>PLAYER</th>
+                        <th id="playerTHead">PLAYER</th>
                     </tr>
                 </thead>
                 <tbody id="playerTable">
@@ -37,17 +38,17 @@
             </table>
             <div class="options">
                 <div id="playerChoice">
-                    <img src="./img/question.png" alt="drawing of an interrogation symbol">
+                    <img src="./img/question.png" style="background-color: white;" alt="drawing of an interrogation symbol">
                 </div>
-                <div>VS</div>
+                <div id="versusLogo">VS</div>
                 <div id="aiChoice">
-                    <img src="./img/question.png" alt="drawing of an interrogation symbol">
+                    <img src="./img/question.png" style="background-color: white;" alt="drawing of an interrogation symbol">
                 </div>
             </div>
             <table>
                 <thead>
                     <tr>
-                        <th>AI</th>
+                        <th id="aiTHead">AI</th>
                     </tr>
                 </thead>
                 <tbody id="aiTable">
@@ -55,8 +56,18 @@
             </table>
         </div>
 
-        <h1 id="roundWinner"></h1>
+        <h1 id="roundWinner" class="round"> The round winner is...</h1>
 
+    </div>
+
+    <div class="congratulations hide">
+        <h1>We Have A Winner!</h1>
+
+        <div id="summary">
+
+        </div>
+
+        <butTon id="playAgain">Another Game?</butTon>
     </div>
 </body>
 

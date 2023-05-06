@@ -85,27 +85,13 @@ const addPoint = (res) => {
     console.log(aiTable);
 }
 
-
-let game = () => {
-    for(let i = 1; i < 6; i++){
-        ai = getComputerChoice();
-        player = prompt("Write rock, paper or scissors", "");
-        player = player.toLowerCase();
-
-        while(!(options.includes(player))){
-            player = prompt("wrong choice, write rock, paper or scissors", "");
-            player = player.toLowerCase();
-        }
-
-        console.log(singleRound(player, ai));
-    }
-}
-
 //game();
 
 // style and actions code
 
 let playButton = document.querySelector("#playButton");
+let playAgain = document.querySelector("#playAgain");
+
 let optionDiv = document.querySelectorAll(".playerOptions");
 let playerChoice = null;
 
@@ -113,22 +99,61 @@ let playerChoiceImg = document.querySelector("#playerChoice > img");
 let aiChoiceImg = document.querySelector("#aiChoice > img");
 let titleResult = document.querySelector("#roundWinner");
 
+let container = document.querySelector(".container");
+let congratulations = document.querySelector(".congratulations");
+let summary = document.querySelector("#summary");
+
 optionDiv.forEach((option) => {
     option.addEventListener("click", () => {
+        let oldMark = document.querySelector(".bookmark");
+        if(oldMark){oldMark.classList.toggle("bookmark");}
+        
         playerChoice = option["id"];
+        option.classList.toggle("bookmark");
     });
 });
 
-playButton.addEventListener("click", () => {
-    let aiChoice = getComputerChoice();
-    playerChoiceImg.setAttribute("src", `./img/${playerChoice}.png`)
-    aiChoiceImg.setAttribute("src", `./img/${aiChoice}.png`)
 
-    let roundResult = singleRound(playerChoice, aiChoice);
+playButton.addEventListener("click", () => {
+    if(playerChoice){
+        let aiChoice = getComputerChoice();
+        playerChoiceImg.setAttribute("src", `./img/${playerChoice}.png`)
+        aiChoiceImg.setAttribute("src", `./img/${aiChoice}.png`)
     
-    if(roundResult.other == null){
-        titleResult.textContent = roundResult.winner + " beat " + roundResult.looser;
+        let roundResult = singleRound(playerChoice, aiChoice);
+        
+        if(roundResult.other == null){
+            titleResult.textContent = roundResult.winner + " beat " + roundResult.looser;
+        } else {
+            titleResult.textContent = roundResult.other;
+        }
+    
+        let oldMark = document.querySelector(".bookmark");
+        if(oldMark){oldMark.classList.toggle("bookmark");}
+        aiChoice = null;
+        playerChoice = null;
+
+        if(games == 5){
+            let winnerMsj = document.createElement("p");
+            winnerMsj.setAttribute("id", "winnerMsj");
+            
+            if(playerWins > aiWins){
+                winnerMsj.textContent = `The player reach the victory with an ${playerWins} - ${aiWins}`;
+            } else if (playerWins < aiWins) {
+                winnerMsj.textContent = `The ai reach the victory with an ${aiWins} - ${playerWins}`;
+            } else {
+                winnerMsj.textContent = `A draw... it seen like the the luck isn't with you player`;
+            }
+
+            summary.appendChild(winnerMsj);
+            container.classList.toggle("hide");
+            congratulations.classList.toggle("hide");
+        }
     } else {
-        titleResult.textContent = roundResult.other;
+        alert("You have to choose one of the 3 options!")
     }
+})
+
+playAgain.addEventListener("click", () => {
+    location.reload();
 })
