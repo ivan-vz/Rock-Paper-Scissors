@@ -1,5 +1,4 @@
-// Game code
-
+//Game
 let options = ["rock", "paper", "scissors"];
 let ai = "";
 let player = "";
@@ -7,6 +6,7 @@ let playerWins = 0;
 let aiWins = 0;
 let games = 0;
 
+//Function to simulate the ai choose
 let getComputerChoice = () => {
     let res = Math.round(Math.random() * (2));
     switch (res){
@@ -22,6 +22,7 @@ let getComputerChoice = () => {
     }
 };
 
+//Function to play 1 round an decide who is the winner of it
 let singleRound = (player, ai) => {
     let roundRes = {
         who: null,
@@ -49,6 +50,7 @@ let singleRound = (player, ai) => {
     return roundRes;
 }
 
+//Function to add the right point to the record of the games
 const addPoint = (res) => {
     let playerTable = document.querySelector("#playerTable");
     let aiTable = document.querySelector("#aiTable");
@@ -85,9 +87,7 @@ const addPoint = (res) => {
     console.log(aiTable);
 }
 
-//game();
-
-// style and actions code
+//Events
 
 let playButton = document.querySelector("#playButton");
 let playAgain = document.querySelector("#playAgain");
@@ -103,6 +103,7 @@ let container = document.querySelector(".container");
 let congratulations = document.querySelector(".congratulations");
 let summary = document.querySelector("#summary");
 
+//Function to add the selected effect to the options
 optionDiv.forEach((option) => {
     option.addEventListener("click", () => {
         let oldMark = document.querySelector(".bookmark");
@@ -113,7 +114,7 @@ optionDiv.forEach((option) => {
     });
 });
 
-
+//Function to monitor each game, see if the player chooses something, set the correct img from the chosen img or ai choice and end the game on round 5
 playButton.addEventListener("click", () => {
     if(playerChoice){
         let aiChoice = getComputerChoice();
@@ -154,6 +155,7 @@ playButton.addEventListener("click", () => {
     }
 })
 
+//Function to 'start' another game
 playAgain.addEventListener("click", () => {
     location.reload();
 })

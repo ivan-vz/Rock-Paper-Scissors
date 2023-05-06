@@ -1,77 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/mainPage.css">
-    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap" rel="stylesheet">
-    <title>R-P-S</title>
-</head>
-<body>
-    <div class="container">
-        <h1 id="header">Choose One!</h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./CSS/mainPage.css">
+        <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap" rel="stylesheet">
+        <title>R-P-S</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1 id="header">Choose One!</h1>
 
-        <div class="options">
-            <div id="rock" class="playerOptions">
-                <img src="./img/rock.png" alt="drawing of rock">
-            </div>
-            <div id="paper" class="playerOptions">
-                <img src="./img/paper.png" alt="drawing of paper">
-            </div>
-            <div id="scissors" class="playerOptions">
-                <img src="./img/scissors.png" alt="drawing od scissors">
-            </div>
-        </div>
-
-        <button id="playButton">Play</button>
-
-        <div class="moves">
-            <table>
-                <thead>
-                    <tr>
-                        <th id="playerTHead">PLAYER</th>
-                    </tr>
-                </thead>
-                <tbody id="playerTable">
-                </tbody>
-            </table>
             <div class="options">
-                <div id="playerChoice">
-                    <img src="./img/question.png" style="background-color: white;" alt="drawing of an interrogation symbol">
+                <div id="rock" class="playerOptions">
+                    <img src="./img/rock.png" alt="drawing of rock">
                 </div>
-                <div id="versusLogo">VS</div>
-                <div id="aiChoice">
-                    <img src="./img/question.png" style="background-color: white;" alt="drawing of an interrogation symbol">
+                <div id="paper" class="playerOptions">
+                    <img src="./img/paper.png" alt="drawing of paper">
+                </div>
+                <div id="scissors" class="playerOptions">
+                    <img src="./img/scissors.png" alt="drawing od scissors">
                 </div>
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th id="aiTHead">AI</th>
-                    </tr>
-                </thead>
-                <tbody id="aiTable">
-                </tbody>
-            </table>
+
+            <button id="playButton">Play</button>
+
+            <div class="moves">
+                <table>
+                    <thead>
+                        <tr>
+                            <th id="playerTHead">PLAYER</th>
+                        </tr>
+                    </thead>
+                    <tbody id="playerTable">
+                    </tbody>
+                </table>
+                <div class="options">
+                    <div id="playerChoice">
+                        <img src="./img/question.png" style="background-color: white;" alt="drawing of an interrogation symbol">
+                    </div>
+                    <div id="versusLogo">VS</div>
+                    <div id="aiChoice">
+                        <img src="./img/question.png" style="background-color: white;" alt="drawing of an interrogation symbol">
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th id="aiTHead">AI</th>
+                        </tr>
+                    </thead>
+                    <tbody id="aiTable">
+                    </tbody>
+                </table>
+            </div>
+
+            <h1 id="roundWinner" class="round"> The round winner is...</h1>
+
         </div>
 
-        <h1 id="roundWinner" class="round"> The round winner is...</h1>
+        <div class="congratulations hide">
+            <h1>We Have A Winner!</h1>
 
-    </div>
+            <div id="summary">
 
-    <div class="congratulations hide">
-        <h1>We Have A Winner!</h1>
+            </div>
 
-        <div id="summary">
-
+            <butTon id="playAgain">Another Game?</butTon>
         </div>
+    </body>
 
-        <butTon id="playAgain">Another Game?</butTon>
-    </div>
-</body>
-
-<script src="./JS/mainPage.js"></script>
-<script src="https://kit.fontawesome.com/8458cec8a6.js" crossorigin="anonymous"></script>
-
+    <script src="./JS/mainPage.js"></script>
+    <!-- script to use 'awesome Font' icons -->
+    <script src="https://kit.fontawesome.com/8458cec8a6.js" crossorigin="anonymous"></script>
 </html>

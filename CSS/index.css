@@ -1,3 +1,4 @@
+/* Basic classes */
 html, body{
     height: 100%;
     margin: 0;
@@ -11,6 +12,7 @@ body{
     flex-direction: column;
 }
 
+/* Header content */
 header{
     flex: 1;
     display: flex;
@@ -31,6 +33,7 @@ header{
     transform: rotate(-30deg);
 }
 
+/* PLay button */
 .container{
     flex: 1;
     display: flex;

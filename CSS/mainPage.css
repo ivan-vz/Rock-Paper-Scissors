@@ -1,3 +1,4 @@
+/* Basic classes */
 *{
     margin: 0;
     padding: 0;
@@ -9,6 +10,7 @@ html, body{
     font-family: 'Kalam', cursive;
 }
 
+/* Options and chooses */
 .container{
     display: flex;
     flex-direction: column;
@@ -78,6 +80,7 @@ html, body{
     text-shadow: 16px 10px 10px #1f2124;
 }
 
+/* Record of the games */
 table{
     width: 200px;
     height: 294px;
@@ -109,6 +112,7 @@ table i {
     color: green;
 }
 
+/* Msj of the result of the round */
 .round {
     background-color: #c5d084;
     text-align: center;
@@ -118,7 +122,7 @@ table i {
     border-radius: 16px;
 }
 
-/* animation and event */
+/* effects of the options in the hover or click event */
 .playerOptions:hover{
     cursor: pointer;
     border-color: #3b8eed;
@@ -130,7 +134,7 @@ table i {
     box-shadow: 0 0 1rem #3b8eed;
 }
 
-/* End of the game */
+/* Msj of the game */
 .congratulations{
     height: 100%;
     display: flex;
@@ -145,7 +149,7 @@ table i {
 }
 
 .congratulations #summary {
-    width: 600px;
+    width: 800px;
     height: 40px;
     text-align: center;
     color: black;
@@ -169,6 +173,8 @@ table i {
 .congratulations button:hover{
     background-color: white;
 }
+
+/* useful classes */
 
 .hide{  
     display: none;
