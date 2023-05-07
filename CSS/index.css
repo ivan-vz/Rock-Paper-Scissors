@@ -18,7 +18,13 @@ header{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+header div {
+    flex: 1;
     font-size: 150px;
+    text-align: center;
 }
 
 #titleRock{
